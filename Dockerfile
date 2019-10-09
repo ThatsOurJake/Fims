@@ -4,7 +4,8 @@ WORKDIR /build
 
 COPY . .
 
-RUN ["npm", "install"]
+RUN npm install && \
+    npm run build
 
 WORKDIR /build/prod_modules
 

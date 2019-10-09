@@ -1,5 +1,3 @@
-import "@babel/runtime/regenerator";
-
 import Koa from 'koa';
 import bodyparser from 'koa-bodyparser';
 
