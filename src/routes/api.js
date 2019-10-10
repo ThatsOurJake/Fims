@@ -7,6 +7,8 @@ const router = new KoaRouter({
   prefix: '/api'
 });
 
+router.get('/ping', (ctx => ctx.body = 'pong'))
+
 router.post('/barcode', async ctx => {
   const { barcode } = ctx.request.body;
 
