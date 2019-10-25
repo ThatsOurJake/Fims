@@ -170,7 +170,9 @@ router.put('/inventory', async ctx => {
 });
 
 router.get('/inventory', async ctx => {
-  const inventory = await inventoryItemModel.find({});
+  const inventory = await inventoryItemModel.find({
+    quantity: { $gt: 0 }
+  });
 
   ctx.body = inventory.map(inventoryItem => {
     const { item, quantity, barcode, attributes } = inventoryItem.toObject();
